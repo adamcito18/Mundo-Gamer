@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mundo Gamer</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f5;
+      color: #333;
+      transition: background-color 0.5s, color 0.5s;
+    }
+    body.dark {
+      background-color: #1c1c1c;
+      color: #eee;
+    }
+    header {
+      background: linear-gradient(to right, #111, #222);
+      color: white;
+      padding: 2em;
+      text-align: center;
+    }
+    nav {
+      background: #333;
+      display: flex;
+      justify-content: center;
+      gap: 1em;
+      padding: 1em;
+      flex-wrap: wrap;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #8a2be2;
+    }
+    section {
+      padding: 2em;
+    }
+    h2 {
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 0.5em;
+      color: #8a2be2;
+    }
+    .card-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5em;
+    }
+    .card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 1em;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+    .game-image {
+      width: 100%;
+      height: 150px;
+      overflow: hidden;
+      border-radius: 5px;
+    }
+    .game-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .rating {
+      margin-top: 0.5em;
+      color: gold;
+    }
+    form {
+      display: grid;
+      gap: 1em;
+      max-width: 400px;
+      margin-top: 1em;
+    }
+    input, textarea {
+      padding: 0.5em;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background-color: #8a2be2;
+      color: white;
+      padding: 0.5em;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+    button:hover {
+      background-color: #6a1bb1;
+      transform: scale(1.05);
+    }
+    .modo-btn {
+      margin-top: 1em;
+      padding: 0.5em 1em;
+    }
+    .video-trailer {
+      margin-top: 1em;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+    footer {
+      background-color: #111;
+      color: white;
+      text-align: center;
+      padding: 1em;
+      margin-top: 2em;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Mundo Gamer</h1>
+    <p>Explora lo mejor del mundo gamer</p>
+    <button class="modo-btn" onclick="cambiarModo()">Cambiar Modo</button>
+  </header>
+
+  <nav>
+    <a href="#inicio">Inicio</a>
+    <a href="#top">Top Juegos</a>
+    <a href="#detalles">Detalles</a>
+    <a href="#recomendaciones">Recomendaciones</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+
+  <section id="inicio">
+    <h2>Inicio</h2>
+    <p>Bienvenido a tu zona gamer. Aquí encontrarás juegos recomendados, populares y más.</p>
+  </section>
+
+  <section id="top">
+    <h2>Top Juegos</h2>
+    <div class="card-container">
+
+      <div class="card">
+        <div class="game-image">
+          <img src="img/skullgirls.jpg" alt="Skullgirls">
+        </div>
+        <h3>Skullgirls</h3>
+        <p>Juego de lucha 2D con estilo artístico de cómic y gran variedad de personajes únicos.</p>
+        <div class="rating">★★★★☆</div>
+        <div class="video-trailer">
+          <iframe width="100%" height="150" src="https://www.youtube.com/embed/jxLZEdDfR_g" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="game-image">
+          <img src="img/the legend of zelda.jpg" alt="Zelda TOTK">
+        </div>
+        <h3>The Legend of Zelda: Tears Of The Kingdom</h3>
+        <p>Aventura épica con exploración libre en un mundo abierto lleno de misterios y magia.</p>
+        <div class="rating">★★★★★</div>
+        <div class="video-trailer">
+          <iframe width="100%" height="150" src="https://www.youtube.com/embed/uHGShqcAHlQ" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="game-image">
+          <img src="img/roblox.jpeg" alt="Roblox">
+        </div>
+        <h3>Roblox</h3>
+        <p>Plataforma de juegos y creación donde los usuarios pueden desarrollar y compartir mundos virtuales.</p>
+        <div class="rating">★★★☆☆</div>
+        <div class="video-trailer">
+          <iframe width="100%" height="150" src="https://www.youtube.com/embed/sme76WoJ_-U" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="game-image">
+          <img src="img/devil may cry.jpeg" alt="Devil May Cry">
+        </div>
+        <h3>Devil May Cry</h3>
+        <p>Acción frenética con combates espectaculares y un estilo visual impresionante.</p>
+        <div class="rating">★★★★☆</div>
+        <div class="video-trailer">
+          <iframe width="100%" height="150" src="https://www.youtube.com/embed/BDw4oKw9mRI" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="game-image">
+          <img src="img/resident evil.jpeg" alt="Resident Evil">
+        </div>
+        <h3>Resident Evil</h3>
+        <p>Juego de terror y supervivencia donde enfrentas criaturas aterradoras y misterios oscuros.</p>
+        <div class="rating">★★★★★</div>
+        <div class="video-trailer">
+          <iframe width="100%" height="150" src="https://www.youtube.com/embed/O75Ip4o1bs8" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="detalles">
+    <h2>Detalles del Juego</h2>
+    <p><strong>Título:</strong> The Legend of Zelda: Tears Of The Kingdom</p>
+    <p><strong>Género:</strong> Aventura, Mundo Abierto</p>
+    <p><strong>Plataforma:</strong> Nintendo Switch</p>
+    <p><strong>Descripción:</strong> Explora el vasto reino de Hyrule y sus cielos en esta secuela de Breath of the Wild con nuevos poderes y desafíos.</p>
+  </section>
+
+  <section id="recomendaciones">
+    <h2>Recomendaciones</h2>
+    <div class="card-container">
+      <div class="card">Hollow Knight</div>
+      <div class="card">Cuphead</div>
+      <div class="card">Undertale</div>
+      <div class="card">Dead Cells</div>
+    </div>
+  </section>
+
+  <section id="contacto">
+    <h2>Contacto</h2>
+    <form onsubmit="return enviarFormulario(event)">
+      <input type="text" placeholder="Nombre" required>
+      <input type="email" placeholder="Correo electrónico" required>
+      <textarea rows="4" placeholder="Mensaje" required></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+    <p id="mensajeEnviado" style="color: green; display: none; margin-top: 1em;">¡Mensaje enviado con éxito!</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Mundo Gamer. Todos los derechos reservados.</p>
+  </footer>
+
+  <audio id="clickSound" src="https://www.soundjay.com/buttons/sounds/button-09.mp3" preload="auto"></audio>
+  <script>
+    function enviarFormulario(event) {
+      event.preventDefault();
+      document.getElementById('mensajeEnviado').style.display = 'block';
+      reproducirSonido();
+    }
+
+    function cambiarModo() {
+      document.body.classList.toggle('dark');
+      reproducirSonido();
+    }
+
+    function reproducirSonido() {
+      const sonido = document.getElementById('clickSound');
+      if (sonido) sonido.play();
+    }
+
+    document.querySelectorAll('button, a').forEach(el => {
+      el.addEventListener('click', reproducirSonido);
+    });
+  </script>
+</body>
+</html>
